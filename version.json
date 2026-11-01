@@ -14,5 +14,13 @@
       "size": 1322601,
       "sha256": "d3a06ad0178deffa2a5e4516038cf018252749a3e4279f2b1c8fd5da35e8cf73"
     }
+  },
+  "app": {
+    "versionCode": 2,
+    "versionName": "0.2",
+    "apk": "https://github.com/cuber454/transport-data/releases/download/v0.2/transport-0.2.apk",
+    "size": 17866787,
+    "sha256": "9d100c6068fe40d6d887faf282a56b7ebaf0cdfb528d19fba80d1199e6cde144",
+    "notes": "Связь с автором в «О программе» (Телеграм и почта). Обновление программы прямо с GitHub."
   }
 }
