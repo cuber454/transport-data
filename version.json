@@ -16,11 +16,11 @@
     }
   },
   "app": {
-    "versionCode": 3,
-    "versionName": "0.3",
-    "apk": "https://github.com/cuber454/transport-data/releases/download/v0.3/transport-0.3.apk",
-    "size": 16746716,
-    "sha256": "9283321b86811b6187a910efb2d258099660243bb971abce040cd9fe551f5e72",
-    "notes": "Связь с автором в «О программе» (Телеграм и почта). Приложение само проверяет обновления и ставит их по нажатию."
+    "versionCode": 4,
+    "versionName": "0.4",
+    "apk": "https://github.com/cuber454/transport-data/releases/download/v0.4/transport-0.4.apk",
+    "size": 16567931,
+    "sha256": "bb18c6f4cf9837d3067f65cd5a8b826f84a56861581cb709d19f26150f04af45",
+    "notes": "Проверка обновления: пришли 0.4 поверх 0.3. Строки с длинным значением в настройках больше не ломаются."
   }
 }
