@@ -16,11 +16,11 @@
     }
   },
   "app": {
-    "versionCode": 5,
-    "versionName": "0.5",
-    "apk": "https://github.com/cuber454/transport-data/releases/download/v0.5/transport-0.5.apk",
-    "size": 16569123,
-    "sha256": "ed787eccd28e5a2d8027e629a6c124984183791a606379550d8a80168496d1f1",
-    "notes": "Установка обновления идёт через системный установщик, без выбора «чем открыть». Плюс исправлены строки настроек с длинным значением"
+    "versionCode": 6,
+    "versionName": "0.6",
+    "apk": "https://github.com/cuber454/transport-data/releases/download/v0.6/transport-0.6.apk",
+    "size": 16568979,
+    "sha256": "9e1649a6d623b650a6094baca037aef39fa72e5f0e705c0b83344d63578ad531",
+    "notes": "Кнопка «Приложение» всегда проверяет обновление заново, а не ставит версию из памяти"
   }
 }
