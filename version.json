@@ -1,0 +1,18 @@
+{
+  "version": "2026-11-01",
+  "builtAt": "2026-11-01T14:43:32.727Z",
+  "files": {
+    "base.json": {
+      "size": 424188,
+      "sha256": "2cbf4864bebec55b684da30e8a3bfe08990ceec37788b8c12a7a9e10c2ba9cd7"
+    },
+    "suburban.json": {
+      "size": 46578,
+      "sha256": "21fdace336ff9d4588ab3520ec9d18f1c7b652af5a040b2c4c74ae5ffe3f8f0a"
+    },
+    "extras.json": {
+      "size": 1322601,
+      "sha256": "d3a06ad0178deffa2a5e4516038cf018252749a3e4279f2b1c8fd5da35e8cf73"
+    }
+  }
+}
