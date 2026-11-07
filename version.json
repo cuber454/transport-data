@@ -1,6 +1,6 @@
 {
-  "version": "2026-11-01",
-  "builtAt": "2026-11-01T14:43:32.727Z",
+  "version": "2026-11-07",
+  "builtAt": "2026-11-07T16:07:01.425Z",
   "files": {
     "base.json": {
       "size": 424188,
@@ -13,6 +13,14 @@
     "extras.json": {
       "size": 1322601,
       "sha256": "d3a06ad0178deffa2a5e4516038cf018252749a3e4279f2b1c8fd5da35e8cf73"
+    },
+    "metro.json": {
+      "size": 39116,
+      "sha256": "34c21c836c5901b595f6220aa271e358bdfa80919cf845edb48067263ebffc95"
+    },
+    "addresses.json": {
+      "size": 3777766,
+      "sha256": "cb23ff7688749430bb30635b1321d3e82042708efe33602a55c1da5840e0a22a"
     }
   },
   "app": {
