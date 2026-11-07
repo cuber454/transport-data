@@ -1,0 +1,72 @@
+name: Обновление данных раз в месяц
+
+# Что делает: 1-го числа каждого месяца поднимает машину в облаке, собирает расписание
+# города с «Виртуального табло» Минсктранса, сверяет с тем, что уже лежит в репозитории,
+# и заливает только если что-то изменилось.
+#
+# Что НЕ трогает: пригород (suburban.json), загородные рейсы (extras.json), метро и адреса.
+# Они меняются сезонно, их пересобирают руками из проекта (см. ДАННЫЕ.md в репозитории
+# с программой): собирать всё это раз в месяц незачем, а загородные рейсы идут полчаса.
+#
+# Запуск:
+#  - сам: cron ниже (02:00 UTC = 05:00 по Минску, 1-го числа);
+#  - вручную: вкладка Actions → «Обновление данных раз в месяц» → Run workflow.
+
+on:
+  schedule:
+    - cron: '0 2 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: monthly-data
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    steps:
+      - name: Проверить репозиторий
+        uses: actions/checkout@v4
+
+      - name: Поставить Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Собрать маршруты и остановки города
+        env:
+          BASE_DIR: build/base
+        run: node tools/build-base.mjs
+
+      - name: Собрать названия остановок
+        env:
+          BASE_DIR: build/base
+        run: node tools/build-names.mjs
+
+      - name: Разложить файлы для публикации
+        run: |
+          mkdir -p build/assets
+          # Остальные базы берём из репозитория: их пересобирают вручную, сезонно.
+          cp base.json suburban.json extras.json metro.json addresses.json build/assets/
+          # Городскую базу подменяем свежей.
+          cp build/base/base.json build/assets/base.json
+          ls -l build/assets
+
+      - name: Проверить и опубликовать
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ASSETS_DIR: build/assets
+          DATA_DIR: .
+        run: |
+          node tools/publish-data.mjs --version "$(date -u -d '+3 hours' +%F)" --skip-if-same --push
+
+      - name: Итог в журнал запуска
+        if: always()
+        run: |
+          echo "версия в репозитории:"; grep -o '"version": "[^"]*"' version.json || true
+          echo "размеры:"; ls -l *.json
