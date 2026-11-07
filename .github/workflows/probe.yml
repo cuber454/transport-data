@@ -1,0 +1,38 @@
+name: Проверка доступа к табло из облака
+
+# Разовый запуск для разбора: видно ли с машин GitHub «Виртуальное табло» Минсктранса.
+# Нужен, чтобы понять, почему ежемесячная сборка падает с «fetch failed».
+# Можно удалить после разбора.
+
+on:
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: DNS и адрес
+        run: |
+          getent hosts minsktrans.by || echo "DNS не отвечает"
+          curl -sS -o /dev/null -w 'страница: %{http_code}, время %{time_total} с\n' --max-time 25 https://minsktrans.by/lookout_yard/Home/Index/minsk || echo "страница недоступна"
+
+      - name: Запрос к действию RouteList
+        run: |
+          curl -sS -i --max-time 25 -X POST 'https://minsktrans.by/lookout_yard/Data/RouteList' \
+            -H 'User-Agent: probe' \
+            -H 'Content-Type: application/x-www-form-urlencoded' \
+            --data 'p=minsk&tt=bus' | head -20 || echo "действие недоступно"
+
+      - name: Наш клиент
+        run: |
+          node -e "
+          import('./tools/minsktrans.mjs').then(async (api) => {
+            try {
+              const list = await api.routeList('bus', 'minsk');
+              console.log('маршрутов:', (list && list.Routes ? list.Routes.length : 0));
+            } catch (error) {
+              console.log('ошибка:', error.message, error.cause ? String(error.cause) : '');
+            }
+          });
+          "
