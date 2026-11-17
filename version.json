@@ -1,0 +1,99 @@
+{
+  "version": "2026-11-18",
+  "builtAt": "2026-11-17T22:22:34.162Z",
+  "files": {
+    "base.json": {
+      "size": 880066,
+      "sha256": "4fae482db484d2e73689eaef2506491f77df0d1dfa9194f5769be403d83d7f47"
+    },
+    "suburban.json": {
+      "size": 45043,
+      "sha256": "08bb6d2a1e15e332717fe8e69fa60776bf69f2a2b19dd0d0450df48f4b544961"
+    },
+    "extras.json": {
+      "size": 1322601,
+      "sha256": "d3a06ad0178deffa2a5e4516038cf018252749a3e4279f2b1c8fd5da35e8cf73"
+    },
+    "metro.json": {
+      "size": 39107,
+      "sha256": "ec1b6a853e3d9378957c781c5718592f9ba3ae4ca05debf88301e92346495d46"
+    },
+    "addresses.json": {
+      "size": 3777766,
+      "sha256": "cb23ff7688749430bb30635b1321d3e82042708efe33602a55c1da5840e0a22a"
+    },
+    "schedules/00.json": {
+      "size": 349917,
+      "sha256": "9d139fc91238b0d9b001e7924ef38795418f2d9a8160e5eeb2748e1f5ba20027"
+    },
+    "schedules/01.json": {
+      "size": 380706,
+      "sha256": "0511e8d9e72e9a2348d228c96dc97d90345778390ee98db8c48beaf1aa078788"
+    },
+    "schedules/02.json": {
+      "size": 350314,
+      "sha256": "00dcf3e597eda898ebb396779bba849a49853a5e096017c595f50c9cc96216e8"
+    },
+    "schedules/03.json": {
+      "size": 379749,
+      "sha256": "3b890496780a110c160d3b5aad91aa1eb852cf580ca4b1ec2030097af4a90fb3"
+    },
+    "schedules/04.json": {
+      "size": 397660,
+      "sha256": "614e4578eec5a8e2dd7b669e8cd4244dca323aee941ade32fdcda302d0d676d2"
+    },
+    "schedules/05.json": {
+      "size": 398284,
+      "sha256": "1410c989904786ed56c37e1a3d2777b2ad18b693e2ced9c019e72fe5773ece3f"
+    },
+    "schedules/06.json": {
+      "size": 381191,
+      "sha256": "7d6c332c05367d749a0f2c2c4eefa36c340130147f18af8ccf201269d57b5ce7"
+    },
+    "schedules/07.json": {
+      "size": 363598,
+      "sha256": "70c190609f1686f5f80e4b772a143b43c8d9c83a8bd609f024f163b885d844d4"
+    },
+    "schedules/08.json": {
+      "size": 364718,
+      "sha256": "49169624bd899653b9407ce1c2fe5896e43acf7f1d23a4db42127be6a3f9ae35"
+    },
+    "schedules/09.json": {
+      "size": 385811,
+      "sha256": "a6bd58c6232878668186b1cb4339cc69788a4842b1adac2806afffbe019ae3a2"
+    },
+    "schedules/10.json": {
+      "size": 379194,
+      "sha256": "320428421534328690d6510d433ba7cdba8c2c312af38c5d6ab07946f516e79a"
+    },
+    "schedules/11.json": {
+      "size": 388758,
+      "sha256": "1fe286ce73ddf017f526964d9b366b572bb7311e48457880bfb9935672d7e86f"
+    },
+    "schedules/12.json": {
+      "size": 399934,
+      "sha256": "abd65ed41362a4c1a0c82ad52158c97064171b3a42c4fd5e512b8b497aa8d14b"
+    },
+    "schedules/13.json": {
+      "size": 341471,
+      "sha256": "8424ae3fae05516793dbe52695e91a6491338ed9c2ddeb98f160fa0698c23a9b"
+    },
+    "schedules/14.json": {
+      "size": 338598,
+      "sha256": "5dafa0abab29a4b8095bdf18529813eba559561d204ae888e75ca14054cfedd1"
+    },
+    "schedules/15.json": {
+      "size": 379872,
+      "sha256": "5b97ab9f4f64b5a6a5ebac4e23f921c755648762f9c68ffccd549ea2b35eb7f4"
+    }
+  },
+  "app": {
+    "versionCode": 8,
+    "versionName": "0.8",
+    "apk": "https://github.com/cuber454/transport-data/releases/download/v0.8/transport-0.8.apk",
+    "size": 9372668,
+    "sha256": "e09b6835809298f239ff6f31661ada8da42350b516f264a71d81fa3dd540f282",
+    "notes": "направление в заголовке, время вместо метров, скорость борта, обновление каждые 10 секунд, порядок в настройках, голос выключен по умолчанию, проверка сигнала",
+    "publishedAt": "2026-11-04T12:56:33.663Z"
+  }
+}
